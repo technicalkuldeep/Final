@@ -13,12 +13,10 @@ export default function Home() {
 
     const handleVideoEnd = () => {
         setCurrentVideoIndex((prevIndex) => {
-            if (prevIndex < videos.length - 1) {
-                prevIndex = prevIndex + 1; 
-                console.log("New prev Index" + prevIndex);
-                return prevIndex; 
-            }
-        });
+        const newIndex = prevIndex < videos.length - 1 ? prevIndex + 1 : prevIndex;
+        console.log("Current Video Index:", newIndex);
+        return newIndex;
+    });
     };
 
     const handleVideoIdSubmit = (event) => {
