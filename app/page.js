@@ -35,13 +35,10 @@ export default function Home() {
 
     return (
         <div>
-            <Appbar />
+            
 
-            {!session ? ( // If not logged in, only show Appbar
-                <div style={{ textAlign: 'center', marginTop: '20px' }}>
-                    <h1>Please log in to view content.</h1>
-                </div>
-            ) : ( // If logged in, show the main content
+            
+            
                 <>
                     <br />
                     <form onSubmit={handleVideoIdSubmit} style={{ textAlign: 'center' }}>
@@ -104,7 +101,7 @@ export default function Home() {
                         ))}
                     </div>
                 </>
-            )}
+            )
         </div>
     );
 }
