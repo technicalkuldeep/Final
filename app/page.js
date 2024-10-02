@@ -8,16 +8,16 @@ import { Appbar } from './components/Appbar.js';
 
 export default function Home() {
     const { data: session, status } = useSession();
-    const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+    const [currentVideoIndex, setCurrentVideoIndex] = useState(1);
     const [videoIdInput, setVideoIdInput] = useState("");
 
     const handleVideoEnd = () => {
         setCurrentVideoIndex((prevIndex) => {
             if (prevIndex < videos.length - 1) {
                 prevIndex = prevIndex + 1; 
+                console.log("New prev Index" + prevIndex);
+                return prevIndex; 
             }
-            return prevIndex; 
-            //xyz
         });
     };
 
